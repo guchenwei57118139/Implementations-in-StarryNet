@@ -1,0 +1,100 @@
+72
+22
+2001:356:378::10
+2001:483:505::40
+0e1804010000000000000000
+#saudi+egypt demo2 u-d
+ip netns exec SH1O17S5 python3 /root/starlink-Grid-LeastDelay/send.py&
+python3 /root/starlink-Grid-LeastDelay/forward_start.py
+ip netns exec SH1O17S5 ping6 2001:483:505::40
+ip netns exec SH1O17S5 traceroute6 2001:483:505::40
+
+72
+22
+2001:309:331::10
+2001:528:529::40
+101804010000000000000000
+#saudi demo1 left-right
+ip netns exec SH1O15S2 python3 /root/starlink-Grid-LeastDelay/send.py&
+python3 /root/starlink-Grid-LeastDelay/forward_start.py
+ip netns exec SH1O15S2 ping6 2001:528:529::40
+ip netns exec SH1O15S2 traceroute6 2001:528:529::40
+
+
+72
+22
+2001:266:288::10
+2001:376:398::40
+0e1204020000000000000000
+#egypt demo1 left-right
+ip netns exec SH1O13S3 ping6 2001:376:398::40
+ip netns exec SH1O13S3 traceroute6 2001:376:398::40
+ip netns exec SH1O13S3 python3 /root/starlink-Grid-LeastDelay/send.py&
+python3 /root/starlink-Grid-LeastDelay/forward_start.py
+ip netns exec SH1O14S3 python3 /root/starlink-Grid-LeastDelay/forward.py -o 72 -s 22 -narbs 0e1204020000000000000000 -src 2001:266:288::10 -dst 2001:376:398::40 -me 288
+python3 /root/starlink-Grid-LeastDelay/kill.py
+
+
+72
+22
+2001:312:334::10
+2001:352:374::40
+0e1204020000000000000000
+#egypt demo2 up-down
+ip netns exec SH1O15S5 python3 /root/starlink-Grid-LeastDelay/send.py&
+python3 /root/starlink-Grid-LeastDelay/forward_start.py
+ip netns exec SH1O15S5 ping6 2001:352:374::40
+ip netns exec SH1O15S5 traceroute6 2001:352:374::40
+
+72
+22
+2001:356:378::10
+2001:483:505::40
+101804010000000000000000
+#saudi demo1 up-down
+ip netns exec SH1O17S5 python3 /root/starlink-Grid-LeastDelay/send.py&
+python3 /root/starlink-Grid-LeastDelay/forward_start.py
+ip netns exec SH1O17S5 ping6 2001:483:505::40
+ip netns exec SH1O17S5 traceroute6 2001:483:505::40
+
+
+
+
+
+72
+22
+2001:266:288::10
+2001:507:529::40
+0e1804010000000000000000
+#saudi+egypt demo1 left-right
+ip netns exec SH1O13S3 ping6 2001:507:529::40
+ip netns exec SH1O13S3 traceroute6 2001:507:529::40
+ip netns exec SH1O13S3 python3 /root/starlink-Grid-LeastDelay/send.py&
+python3 /root/starlink-Grid-LeastDelay/forward_start.py
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
